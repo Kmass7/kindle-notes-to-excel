@@ -1,13 +1,9 @@
-Attribute VB_Name = "Module2"
 Sub format_cells()
-Attribute format_cells.VB_Description = "jsdkfhjul"
-Attribute format_cells.VB_ProcData.VB_Invoke_Func = "a\n14"
 '
 ' format_cells Macro
-' jsdkfhjul
 '
-' Keyboard Shortcut: Ctrl+a
-'
+' Keyboard Shortcut: Ctrl+Shift+F
+
     Columns("A:A").Select
     Selection.ColumnWidth = 10
     Columns("B:D").Select
@@ -40,3 +36,5 @@ Attribute format_cells.VB_ProcData.VB_Invoke_Func = "a\n14"
     End With
 
 End Sub
+
+
