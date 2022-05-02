@@ -3,7 +3,7 @@ Takes "My Clippings" text file from an Amazon Kindle device and formats informat
 
 This allows you to easily highlight something on your Kindle, maybe write a short note with its shoddy keyboard system, and then write something more fleshed out in Excel if you wish. It also just makes it much nicer to look and read.
 
-The clippings file is really just a "note history" file, so even if you delete a highlight/note in your kindle... it will still show up in the file. Take for example you highlight a small portion of the text, but the later you want to expand that selection. You will still have to remove duplicates from time to time as the code can not read your mind and know which one you rather keep.
+The clippings file is really just a "note history" file, so even if you delete a highlight/note in your kindle... it will still show up in the file. Take for example you highlight a small portion of the text, but the later you want to expand that selection. The kindle will save that bigger selection as a separate clipping rather than just overwriting the old one. You will still have to remove duplicates from time to time as the code can not read your mind and know which one you rather keep.
 
 General things to do:
 - Add your paths to the fileLocations.py file
