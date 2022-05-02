@@ -182,7 +182,7 @@ def main():
             elif highlight.get('End Location') > note.get('End Location') and highlight.get('Start Location') < note.get('End Location'):
                 highlight['Note'] = note.get('content')
 
-            #What about if the highlight location shrinks, but the note stays where it was? IDK, just try to not do that :P.
+            #What about if the highlight location shrinks, but the note stays where it was? IDK, just try to not do that for now haha
             
             #Format
             myClippings[highlight['Title']][highlight['content']] = [int(highlight.get('End Location')), str(highlight.get('content')),str(highlight.get('Note'))]
@@ -197,7 +197,7 @@ def main():
                 newLineDict[title][content] = myClippings[title][content]
     
 
-    #Prevent failure at first use. (DO NOT DELETE clips.json!!!) 
+    #Prevent failure at first use.  
     if len(oldClips) == 0:
         saveClips(myClippings)
         
