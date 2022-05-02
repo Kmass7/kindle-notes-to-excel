@@ -1,9 +1,9 @@
 # kindle-notes-to-excel
 Takes "My Clippings" text file from an Amazon Kindle device and formats information in excel files based on book
 
-This allows you to easily highlight something on your Kindle, maybe write a short note with shoddy keyboard system, and then write something more fleshed out in Excel if you wish.
+This allows you to easily highlight something on your Kindle, maybe write a short note with its shoddy keyboard system, and then write something more fleshed out in Excel if you wish. It also just makes it much nicer to look and read.
 
-The clippings file is really just a "note history" file, so if you delete a highlight/note in your kindle... it will still show up in the file. 
+The clippings file is really just a "note history" file, so even if you delete a highlight/note in your kindle... it will still show up in the file. 
 
 Take for example you highlight a small portion of the text, but the later you want to expand that selection. The kindle will create an entirely different clipping for that bigger selection in addition to the older one. The code prevents this for the most part. You will still have to remove duplicates from time to time as the code can not read your mind and know which one you rather keep.
 
