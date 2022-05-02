@@ -14,6 +14,5 @@ General things to do:
 
 - If you want, add the format_cells.bas macro to your excel PERSONAL.XLSB modules. Use the shortcut Ctrl+Shift+F to format the cells into a readable manner.
 
-The default file organization is a bit weird, that because I just have a shortcut on my desktop that I use instead :D
 
 
