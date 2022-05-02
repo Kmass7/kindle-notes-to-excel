@@ -11,16 +11,15 @@ storageFile = Path(fileLocations.srcPath) / "clips.json"
 
 termLine = '=========='
 
-
 def getClipping(filename):
-
     #read My Clippings file and remove the 10 separating equals signs
     with open(filename, 'r', encoding='utf-8-sig') as f:
         sourceFile = f.read()
     return sourceFile.split(termLine)
 
-def getRows(clipping):
 
+def getRows(clipping):
+    #segment each clipping into basic information
     row = {}
     lines = [l for l in clipping.split(u'\n') if l]
 
@@ -60,7 +59,7 @@ def getRows(clipping):
 
 
 def loadClips():
-
+    #load old clips
     try:
         with open(storageFile, 'r') as f:
             return json.load(f)
@@ -71,13 +70,14 @@ def loadClips():
 
 
 def saveClips(myClippings):
-
+    #save new clips
     with open(storageFile, 'w') as f:
         json.dump(myClippings, f)
 
-def hasHandle(fpath):
 
-#Ripped from StackOverflow - could be changed to be faster, but I'm not too sure how to do it yet lol
+def hasHandle(fpath):
+    #Ripped from StackOverflow - could be changed to be faster, but I'm not too sure how to do it yet lol
+    #See if process is running
     for proc in process_iter():
         try:
             for item in proc.open_files():
@@ -88,8 +88,8 @@ def hasHandle(fpath):
 
     return False
 
-def myClippingsExcel(newLineDict):
 
+def myClippingsExcel(newLineDict):
     #Create new workbooks if they don't exist
     for title in newLineDict:
 
@@ -142,7 +142,6 @@ def myClippingsExcel(newLineDict):
 
 
 def main():
-
     #Setup dicts for formating Kindle Clipping segments into usful forms
     myClippings = defaultdict(dict)
     oldClips = defaultdict(dict)
@@ -182,7 +181,7 @@ def main():
             elif highlight.get('End Location') > note.get('End Location') and highlight.get('Start Location') < note.get('End Location'):
                 highlight['Note'] = note.get('content')
 
-            #What about if the highlight location shrinks, but the note stays where it was? IDK, just try to not do that for now haha
+            #What about if the highlight location shrinks, but the note stays where it was? IDK, just try to not do that :P.
             
             #Format
             myClippings[highlight['Title']][highlight['content']] = [int(highlight.get('End Location')), str(highlight.get('content')),str(highlight.get('Note'))]
@@ -197,7 +196,7 @@ def main():
                 newLineDict[title][content] = myClippings[title][content]
     
 
-    #Prevent failure at first use.  
+    #Prevent failure at first use. (DO NOT DELETE clips.json!!!) 
     if len(oldClips) == 0:
         saveClips(myClippings)
         
